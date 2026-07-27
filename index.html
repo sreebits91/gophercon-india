@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GopherCon India 2026 | Build. Scale. Go.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0b1120; color: #e2e8f0; }
+        .gopher-mascot { position: fixed; bottom: 0; left: 0px; width: 240px; z-index: 100; transition: transform 0.4s; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        @keyframes scroll { from { background-position: 0 0; } to { background-position: -2000px 0; } }
+        .infinite-skyline { background-image: url('hyderbad_preview.png'); background-repeat: repeat-x; background-position: 0 bottom; background-size: auto 100%; animation: scroll 60s linear infinite; }
+        @media (max-width: 768px) { .gopher-mascot { width: 100px; left: -20px; } }
+        .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #06b6d4; /* The Cursor */
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing { 
+    from { width: 0 } 
+    to { width: 100% } 
+}
+
+@keyframes blink-caret { 
+    from, to { border-color: transparent } 
+    50% { border-color: #06b6d4 } 
+}
+    </style>
+    <style>
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } 
+    }
+    .animate-scroll {
+        animation: scroll 30s linear infinite;
+        will-change: transform;
+    }
+    /* Stop the animation when hovering */
+    .group:hover .animate-scroll {
+        animation-play-state: paused;
+    }
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon-2.png">
+</head>
+<body class="antialiased">
+
+    <img src="gophermascot-2.png" alt="GopherCon India 2026 Mascot" class="gopher-mascot">
+
+    <nav class="fixed w-full z-50 bg-white backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8 justify-between text-[#020617]/80">
+        <div class="font-bold text-xl">GopherCon India 2026</div>
+        <div class="hidden md:flex gap-6 text-sm items-center">
+            <a href="#x-factor" class="hover:text-white transition">X-Factor</a>
+            <a href="#speakers" class="hover:text-white transition">Speakers</a>
+            <a href="#sponsors" class="hover:text-white transition">Sponsors</a>
+        
+        <!-- Join Us Button (Outline) -->
+        <a href="#" class="px-4 py-1.5 rounded-full border border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white transition">
+            Join Us
+        </a>
+        
+        <!-- Sponsor Us Button (Filled) -->
+        <a href="#" class="px-4 py-1.5 rounded-full bg-cyan-500 text-white hover:bg-cyan-600 transition">
+            Sponsor Us
+        </a>
+        </div>
+    </nav>
+
+   <!-- 
+    Hero Section -->
+    <!-- <section class="h-[650px] w-fit bg-[#0b1120] pt-20 flex items-center pl-5"> -->
+        <!-- <div class="max-w-7xl mx-auto w-full grid grid-cols-3 gap-8 px-6 items-center"> -->
+            <!-- Content (2/3) -->
+            <!-- <div class="col-span-2 flex flex-col justify-center space-y-8 pr-12"> -->
+                <!-- <div class="w-fit px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase"> -->
+                    <!-- <span class="typing-effect">November 22, 2026 • Hyderabad</span> -->
+                <!-- </div> -->
+                <!-- <h1 class="text-7xl font-black tracking-tighter leading-tight">GopherCon'26</h1>
+                <p class="text-xl text-slate-400">Join the premier gathering of Go developers in the heart of India's tech hub. Experience world-class workshops, keynote insights, and unparalleled networking in a city that blends heritage with future-ready innovation.</p>
+                <div class="flex gap-6 py-6">
+                    <div class="text-center"><span class="block text-4xl font-bold">152</span><span class="text-xs text-slate-500">DAYS</span></div>
+                    <div class="text-center"><span class="block text-4xl font-bold">08</span><span class="text-xs text-slate-500">HOURS</span></div>
+                    <div class="text-center"><span class="block text-4xl font-bold">45</span><span class="text-xs text-slate-500">MINS</span></div>
+                </div>
+                <button class="px-8 py-4 bg-cyan-500 text-white font-bold rounded-2xl hover:bg-cyan-600 transition w-fit">Join the Event</button>
+            </div> -->
+
+            <!-- Video (1/3) with Square Aspect and External Icon Control -->
+            <!-- <div class="col-span-1 flex items-center gap-4">
+                <div class="h-[800px] aspect-square rounded-3xl overflow-hidden border border-white/10 flex-shrink-0">
+                    <video id="hero-video" class="w-full h-full object-cover" autoplay muted loop playsinline>
+                        <source src="gopher-video.mp4" type="video/mp4">
+                    </video>
+                </div> -->
+                <!-- <button id="toggle-video" class="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full transition border border-white/20">
+                    <svg id="play-icon" class="w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg id="pause-icon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section> 
+   --> 
+
+    <!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="min-h-[700px] w-full bg-[#0b1120] pt-20 flex items-center relative overflow-hidden">
+    <!-- Content (Left side) -->
+    <div class="w-full max-w-[600px] pl-10 z-20">
+        <div class="w-fit px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase mb-6">
+            <span>November 22, 2026 • Hyderabad</span>
+        </div>
+        <h1 class="text-7xl font-black tracking-tighter leading-tight text-white mb-6">GopherCon'26</h1>
+        <p class="text-xl text-slate-400 mb-8">Join the premier gathering of Go developers in the heart of India's tech hub.</p>
+        <button class="px-8 py-4 bg-cyan-500 text-white font-bold rounded-2xl hover:bg-cyan-600 transition">Join the Event</button>
+    </div>
+
+    <!-- Circle Stack (Locked to Right) -->
+    <div class="absolute -right-40 top-0 h-full flex items-center z-10">
+        <div class="circle-stack">
+            <div class="circle c5"></div>
+            <div class="circle c4"></div>
+            <div class="circle c3"></div>
+            <div class="circle c2"></div>
+            <div class="circle c1 overflow-hidden shadow-2xl">
+                <video id="hero-video" class="w-full h-full object-cover" autoplay muted loop playsinline>
+                    <source src="gophercon_highlights.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scrolling Ribbon Section -->
+<section class="w-full bg-[#002d40] py-4 overflow-hidden border-y border-cyan-500/20">
+    <div class="flex animate-ribbon-scroll whitespace-nowrap">
+        <!-- Text repeated multiple times to ensure smooth infinite loop -->
+        <div class="text-white font-bold text-lg px-8 flex items-center gap-8">
+            <span>GopherCon India 2026 | November 22 2026 | Novotel Hyderabad</span>
+            <span>✦</span>
+            <span>GopherCon India 2026 | November 22 2026 | Novotel Hyderabad</span>
+            <span>✦</span>
+            <span>GopherCon India 2026 | November 22 2026 | Novotel Hyderabad</span>
+            <span>✦</span>
+            <span>GopherCon India 2026 | November 22 2026 | Novotel Hyderabad</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Ribbon Animation */
+    @keyframes ribbon-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    .animate-ribbon-scroll {
+        animation: ribbon-scroll 20s linear infinite;
+    }
+
+    /* Stacked Circles Styling */
+    .circle-stack { position: relative; width: 800px; height: 800px; display: flex; align-items: center; justify-content: center; }
+    .circle { position: absolute; border-radius: 50%; animation: slideInRight 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+    
+    .c5 { width: 800px; height: 800px; animation-delay: 0.1s; background-color: #002d40; z-index: 1; }
+    .c4 { width: 680px; height: 680px; animation-delay: 0.2s; background-color: #005a73; z-index: 2; }
+    .c3 { width: 560px; height: 560px; animation-delay: 0.3s; background-color: #007d9c; z-index: 3; }
+    .c2 { width: 440px; height: 440px; animation-delay: 0.4s; background-color: #00add8; z-index: 4; }
+    .c1 { width: 360px; height: 360px; animation-delay: 0.5s; z-index: 5; background-color: #ffffff; }
+
+    @keyframes slideInRight {
+        from { transform: translateX(200px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+</style>
+
+    <!-- X-Factor Section -->
+    <section id="x-factor" class="relative py-24 bg-white text-slate-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.08] infinite-skyline pointer-events-none drop-shadow-sm"></div>
+        <div class="max-w-7xl mx-auto px-8 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black leading-tight">Hyderabad: <br><span class="text-cyan-600">The X-Factor</span></h2>
+                <p class="text-slate-600 leading-relaxed">India's tech powerhouse, blending centuries of heritage with future-ready infrastructure.</p>
+            </div>
+            <div class="p-8 bg-slate-900 text-white rounded-2xl shadow-xl">
+                <h3 class="font-bold text-lg mb-4">Tech Hub Facts</h3>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li>✦ Global giant campuses (Google, Microsoft, Amazon).</li>
+                    <li>✦ Gachibowli-Hitech City: a global cloud-native hub.</li>
+                    <li>✦ Elite world-class infrastructure.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Section -->
+<!-- Workshop Section -->
+<section id="workshop" class="py-24 bg-white text-slate-900">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Sticky Sidebar -->
+            <div class="lg:col-span-4 mb-16 lg:mb-0">
+                <div class="lg:sticky lg:top-32">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase text-slate-900">1-Day Workshop</h2>
+                    <p class="mt-6 text-lg text-slate-600">Deep dive into Go with hands-on sessions. A full day of coding, architectural patterns, and cloud-native scaling.</p>
+                    <button class="mt-10 bg-cyan-500 text-white px-8 py-4 font-bold uppercase hover:bg-cyan-600 transition">Register Now</button>
+                </div>
+            </div>
+
+            <!-- Workshop Grid -->
+            <div class="lg:col-span-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Session Card 1 -->
+                    <div class="p-8 rounded-3xl border border-slate-200 hover:border-cyan-500 transition">
+                        <span class="text-cyan-600 font-mono text-sm font-bold">09:00 - 12:00</span>
+                        <h3 class="text-2xl font-bold mt-2">Go Concurrency Patterns</h3>
+                        <p class="text-slate-600 mt-4">Master channels, goroutines, and advanced synchronization primitives for high-performance apps.</p>
+                    </div>
+                    
+                    <!-- Session Card 2 -->
+                    <div class="p-8 rounded-3xl border border-slate-200 hover:border-cyan-500 transition">
+                        <span class="text-cyan-600 font-mono text-sm font-bold">13:00 - 16:00</span>
+                        <h3 class="text-2xl font-bold mt-2">Cloud-Native Microservices</h3>
+                        <p class="text-slate-600 mt-4">Build scalable, secure microservices using Go with industry-standard patterns and Kubernetes integration.</p>
+                    </div>
+
+                    <!-- Session Card 3 -->
+                    <div class="p-8 rounded-3xl border border-slate-200 hover:border-cyan-500 transition">
+                        <span class="text-cyan-600 font-mono text-sm font-bold">16:00 - 18:00</span>
+                        <h3 class="text-2xl font-bold mt-2">Testing & Debugging</h3>
+                        <p class="text-slate-600 mt-4">Best practices for writing maintainable test suites and troubleshooting production-grade Go services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Speakers Section -->
+    <!-- <section id="speakers" class="bg-white py-24 text-slate-900">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-4xl font-black mb-16 text-center">Keynote Speakers</h2>
+            <div class="flex overflow-x-auto gap-8 pb-8 justify-center">
+                <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Dr. Gopher</h3></div>
+                <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Sarah Jenkins</h3></div>
+                <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Amit Verma</h3></div>
+                    <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Dr. Gopher</h3></div>
+                <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Sarah Jenkins</h3></div>
+                <div class="w-64 bg-slate-50 rounded-3xl p-8 border border-slate-100"><div class="w-20 h-20 bg-slate-200 rounded-full mb-6 mx-auto"></div><h3 class="font-bold text-lg text-center">Amit Verma</h3></div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Featured Speakers Section -->
+<section id="speakers" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Sticky Sidebar -->
+            <div class="lg:col-span-4 mb-16 lg:mb-0">
+                <div class="lg:sticky lg:top-32">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase text-slate-900">Keynote Speakers</h2>
+                    <p class="mt-6 text-lg text-slate-600">Our lineup includes leading experts, researchers, and open-source contributors from across the Go community.</p>
+                    <a href="#" class="mt-10 inline-block bg-cyan-500 text-white px-8 py-4 font-bold uppercase hover:bg-cyan-600 transition">See all speakers</a>
+                </div>
+            </div>
+
+            <!-- Speaker Grid (Responsive: 1 -> 2 -> 4 columns) -->
+            <div class="lg:col-span-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
+                    
+                    <!-- Speaker Card Template (Repeat for all speakers) -->
+                    <!-- 1 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Dr. Gopher</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">Keynote Speaker</p>
+                    </div>
+                    <!-- 2 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Sarah Jenkins</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">Lead Developer</p>
+                    </div>
+                    <!-- 3 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Amit Verma</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">Cloud Architect</p>
+                    </div>
+                    <!-- 4 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Dr. Gopher</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">Researcher</p>
+                    </div>
+                    <!-- 5 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Sarah Jenkins</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">DevOps Expert</p>
+                    </div>
+                    <!-- 6 -->
+                    <div class="group">
+                        <div class="aspect-square w-full overflow-hidden bg-slate-100 rounded-3xl mb-4 border border-slate-200">
+                            <div class="w-full h-full bg-slate-200 group-hover:scale-105 transition-transform duration-300"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Amit Verma</h3>
+                        <p class="text-sm font-semibold text-slate-500 mt-1">Systems Engineer</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Past Conferences Section -->
+<!-- Past Conferences Section -->
+<section id="past-conferences" class="py-24 bg-white text-slate-900">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Sticky Sidebar -->
+            <div class="lg:col-span-4 mb-16 lg:mb-0">
+                <div class="lg:sticky lg:top-32">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase text-slate-900">Conference Archive</h2>
+                    <p class="mt-6 text-lg text-slate-600">Relive the journey of GopherCon India. Scroll to explore our history of past events.</p>
+                </div>
+            </div>
+
+            <!-- Scrollable Grid Container -->
+            <div class="lg:col-span-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto pb-4">
+                    
+                    <!-- 2025 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2025</span><h3 class="text-lg font-bold mt-1">Jaipur</h3><div class="mt-2">
+                            <!-- <a href="https://gopherconindia.org/prospect/GCI_Prospectus_2025_.pdf" class="block text-[11px] text-cyan-600 font-bold hover:text-cyan-700 underline">Prospectus</a> -->
+                        </div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2025" alt="2025" class="w-full h-full object-cover"></div>
+                    </div>
+
+                     <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2024</span><h3 class="text-lg font-bold mt-1">Jaipur</h3><div class="mt-2"><a href="https://www.youtube.com/watch?v=ZnrXDnhSmH0" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Archive</a>
+                            <!-- <a href="https://gopherconindia.org/prospect/GCI_Prospectus_2025_.pdf" class="block text-[11px] text-cyan-600 font-bold hover:text-cyan-700 underline">Prospectus</a> -->
+                        </div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2024" alt="2024" class="w-full h-full object-cover"></div>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2023</span><h3 class="text-lg font-bold mt-1">Pune</h3><div class="mt-2"><a href="https://gopherconindia.org/gci2023.pdf" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Timeline</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2023" alt="2023" class="w-full h-full object-cover"></div>
+                    </div>
+                    <!-- 2022 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2022</span><h3 class="text-lg font-bold mt-1">Pune</h3><div class="mt-2"><a href="https://gopherconindia.org/2022" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Archive</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2022" alt="2022" class="w-full h-full object-cover"></div>
+                    </div>
+
+                     <!-- 2019 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2019</span><h3 class="text-lg font-bold mt-1">Goa</h3><div class="mt-2"><a href="https://gopherconindia.org/2019/" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Visit</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2019" alt="2019" class="w-full h-full object-cover"></div>
+                    </div>
+
+                    <!-- 2018 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2018</span><h3 class="text-lg font-bold mt-1">Pune</h3><div class="mt-2"><a href="https://gopherconindia.org/2018/" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Visit</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2018" alt="2018" class="w-full h-full object-cover"></div>
+                    </div>
+
+                    <!-- 2017 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2017</span><h3 class="text-lg font-bold mt-1">Pune</h3><div class="mt-2"><a href="https://gopherconindia.org/2017/" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Visit</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2017" alt="2017" class="w-full h-full object-cover"></div>
+                    </div>
+
+                    <!-- 2016 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2016</span><h3 class="text-lg font-bold mt-1">Bangalore</h3><div class="mt-2"><a href="https://gopherconindia.org/2016/" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Visit</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2016" alt="2016" class="w-full h-full object-cover"></div>
+                    </div>
+
+                    <!-- 2015 -->
+                    <div class="flex items-center p-4 border border-slate-200 rounded-2xl hover:border-cyan-500 transition-all duration-300 min-w-[280px]">
+                        <div class="flex-1 pr-4"><span class="text-cyan-600 font-bold text-[10px] uppercase tracking-widest">2015</span><h3 class="text-lg font-bold mt-1">Bangalore</h3><div class="mt-2"><a href="https://gopherconindia.org/2015/" class="block text-[11px] text-slate-500 hover:text-cyan-600 underline">Visit</a></div></div>
+                        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-xl bg-slate-100"><img src="https://placehold.co/200x200/e2e8f0/64748b?text=2015" alt="2015" class="w-full h-full object-cover"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-24 bg-slate-50 text-slate-900">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-black mb-8">Our Sponsors</h2>
+            <p class="text-slate-500 mb-4">Empowering the Go community in India.</p></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-center justify-items-center">
+            <!-- Sponsor Cards -->
+            <div class="px-6 py-4 rounded-xl shadow-sm font-bold text-slate-700">Accenture</div>
+            <div class="px-6 py-4 rounded-xl shadow-sm font-bold text-slate-700">AWS</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm font-bold text-slate-700">Deloitte</div>
+            <div class="px-6 py-4 rounded-xl shadow-sm  font-bold text-slate-700">EY</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm font-bold text-slate-700">Fivetran</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm font-bold text-slate-700">Glean</div>
+            <div class="px-6 py-4 rounded-xl shadow-sm  font-bold text-slate-700">Google</div>
+            <div class="px-6 py-4 rounded-xl shadow-sm font-bold text-slate-700">Infosys</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm  font-bold text-slate-700">Microsoft</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm font-bold text-slate-700">Monte Carlo</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm  font-bold text-slate-700">OpenAI</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm  font-bold text-slate-700">Quest</div>
+            <div class="px-6 py-4  rounded-xl shadow-sm  font-bold text-slate-700">Sigma</div>
+            <div class="px-6 py-4 rounded-xl shadow-sm font-bold text-cyan-700">NPCI</div>
+        </div>
+        </div>
+    </section>
+
+    <section class="py-12 overflow-hidden bg-white">
+    <div class="max-w-7xl mx-auto px-8 mb-8">
+        <h3 class="text-xl font-bold text-slate-900">Event Highlights</h3>
+    </div>
+
+    <div class="flex overflow-hidden group">
+        <!-- The JS will inject children into this div -->
+        <div id="image-ribbon" class="flex animate-scroll gap-6"></div>
+    </div>
+</section>
+
+    <footer class="bg-[#020617] py-12 text-center text-sm text-slate-500 border-t border-white/5">&copy; 2026 GopherCon India. All rights reserved.</footer>
+
+    <script>
+        const video = document.getElementById('hero-video');
+        const btn = document.getElementById('toggle-video');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+
+        btn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                video.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        });
+    </script>
+    <script>
+    // 1. List all your image paths here
+    const allImages = [
+        "2024-4.jpeg",
+        "2015-1.jpeg",
+        "2015-2.jpeg",
+        "2015.jpeg",
+        "2016-1.jpeg",
+        "2016.jpeg",
+        "2017-1.jpeg",
+        "2017.jpeg",
+        "2018.jpeg",
+        "2019.jpeg",
+        "2023.jpeg",
+        "2023-1.jpeg"
+    ];
+
+    function renderRibbon() {
+        const ribbon = document.getElementById('image-ribbon');
+        
+        // 2. Randomly shuffle the array
+        const shuffled = [...allImages].sort(() => Math.random() - 0.5);
+        
+        // 3. Duplicate the shuffled array to ensure the infinite scroll loop is seamless
+        const displayList = [...shuffled, ...shuffled];
+
+        // 4. Clear current content and inject
+        ribbon.innerHTML = ''; 
+        displayList.forEach(src => {
+            const div = document.createElement('div');
+            div.className = "w-48 h-32 shrink-0 rounded-2xl overflow-hidden border border-slate-200 shadow-sm";
+            div.innerHTML = `<img src="./images/${src}" alt="Conference Photo" class="w-full h-full object-cover">`;
+            ribbon.appendChild(div);
+        });
+    }
+
+    // Run on load
+    renderRibbon();
+</script>
+</body>
+</html>
