@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GopherCon India 2026 | Build. Scale. Go.</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- External CSS -->
-  <link rel="stylesheet" href="global.css?v=3">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="global.css?v=4">
   <link rel="icon" type="image/x-icon" href="/favicon-2.png">
 </head>
 <body class="antialiased bg-[#0b1120] text-slate-200">
@@ -18,23 +18,23 @@
   <img src="gophermascot-2.png" alt="GopherCon India 2026 Mascot" class="gopher-mascot">
 
   <!-- Navigation Bar -->
-  <nav class="fixed w-full z-50 bg-[#0b1120]/80 backdrop-blur-xl border-b border-slate-800/80 h-20 flex items-center px-8 justify-between">
+  <nav class="fixed w-full z-50 bg-[#0b1120]/80 backdrop-blur-xl border-b border-slate-800 h-20 flex items-center px-8 justify-between">
     <div class="font-extrabold text-xl tracking-tight text-white flex items-center gap-2">
-      <span class="text-cyan-400">GopherCon</span> India 2026
+      <span class="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">GopherCon</span> India 2026
     </div>
-    
+
     <div class="hidden md:flex gap-8 text-sm font-medium items-center">
-      <a href="#x-factor" class="hover:text-cyan-400 transition-colors">X-Factor</a>
-      <a href="#workshop" class="hover:text-cyan-400 transition-colors">Workshops</a>
-      <a href="#speakers" class="hover:text-cyan-400 transition-colors">Speakers</a>
-      <a href="#past-conferences" class="hover:text-cyan-400 transition-colors">Archive</a>
-      <a href="#sponsors" class="hover:text-cyan-400 transition-colors">Sponsors</a>
+      <a href="#x-factor" class="hover:text-sky-400 transition-colors">X-Factor</a>
+      <a href="#workshop" class="hover:text-sky-400 transition-colors">Workshops</a>
+      <a href="#speakers" class="hover:text-sky-400 transition-colors">Speakers</a>
+      <a href="#past-conferences" class="hover:text-sky-400 transition-colors">Archive</a>
+      <a href="#sponsors" class="hover:text-sky-400 transition-colors">Sponsors</a>
 
       <div class="flex items-center gap-3 pl-4 border-l border-slate-800">
-        <a href="#" class="px-5 py-2 rounded-full border border-slate-700/80 bg-slate-900/50 text-slate-300 text-xs font-semibold hover:border-cyan-500/50 hover:text-white transition-all duration-200">
+        <a href="#" class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold hover:border-slate-500 hover:text-white transition-all duration-200">
           Join Us
         </a>
-        <a href="#" class="shiny-border px-5 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-cyan-950/50">
+        <a href="#" class="shiny-border px-5 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-indigo-950/30">
           Sponsor Us
         </a>
       </div>
@@ -44,7 +44,8 @@
   <!-- Hero Section -->
   <section class="min-h-[700px] w-full pt-20 flex items-center relative overflow-hidden">
     <div class="w-full max-w-[600px] pl-10 md:pl-16 z-20 my-16">
-      <div class="w-fit px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase mb-6">
+      <div class="w-fit px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-bold uppercase mb-6 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
         November 22, 2026 | Hyderabad
       </div>
       <h1 class="text-6xl md:text-7xl font-black tracking-tighter leading-tight text-white mb-6">
@@ -53,7 +54,7 @@
       <p class="text-xl text-slate-400 mb-8 leading-relaxed">
         Join the premier gathering of Go developers in the heart of India's tech hub.
       </p>
-      <button class="px-8 py-4 bg-cyan-500 text-white font-bold rounded-2xl hover:bg-cyan-600 transition shadow-lg shadow-cyan-500/25">
+      <button class="px-8 py-4 bg-white text-slate-900 font-bold rounded-2xl hover:bg-slate-200 transition shadow-lg shadow-white/10">
         Join the Event
       </button>
     </div>
@@ -74,16 +75,16 @@
     </div>
   </section>
 
-  <!-- Marquee Banner -->
-  <section class="w-full bg-[#002d40] py-4 overflow-hidden border-y border-cyan-500/20">
+  <!-- Banner -->
+  <section class="w-full bg-[#0f172a] py-4 overflow-hidden border-y border-slate-800">
     <div class="flex animate-ribbon-scroll whitespace-nowrap">
-      <div class="text-cyan-100 font-bold text-lg px-8 flex items-center gap-12">
+      <div class="text-slate-400 font-medium text-xs px-8 flex items-center gap-12 uppercase tracking-widest">
         <span>GopherCon India 2026 • Nov 22 • Novotel Hyderabad</span>
-        <span>•</span>
+        <span class="text-sky-400">•</span>
         <span>GopherCon India 2026 • Nov 22 • Novotel Hyderabad</span>
-        <span>•</span>
+        <span class="text-sky-400">•</span>
         <span>GopherCon India 2026 • Nov 22 • Novotel Hyderabad</span>
-        <span>•</span>
+        <span class="text-sky-400">•</span>
         <span>GopherCon India 2026 • Nov 22 • Novotel Hyderabad</span>
       </div>
     </div>
@@ -95,7 +96,7 @@
     <div class="max-w-7xl mx-auto px-8 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
       <div class="space-y-6">
         <h2 class="text-4xl font-black leading-tight text-white">
-          Hyderabad: <br><span class="text-cyan-400">The X-Factor</span>
+          Hyderabad: <br><span class="text-sky-400">The X-Factor</span>
         </h2>
         <p class="text-slate-400 leading-relaxed text-lg">
           India's tech powerhouse, blending centuries of heritage with future-ready infrastructure.
@@ -105,15 +106,15 @@
         <h3 class="font-bold text-xl mb-4 text-white">Tech Hub Facts</h3>
         <ul class="space-y-4 text-sm text-slate-300">
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
             Global giant campuses (Google, Microsoft, Amazon).
           </li>
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
             Gachibowli-Hitech City: a global cloud-native hub.
           </li>
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
             Elite world-class conference infrastructure.
           </li>
         </ul>
@@ -131,27 +132,27 @@
             <p class="mt-6 text-lg text-slate-400 leading-relaxed">
               Deep dive into Go with hands-on sessions. A full day of coding, architectural patterns, and cloud-native scaling.
             </p>
-            <button class="mt-8 bg-cyan-500 text-white px-8 py-4 font-bold uppercase rounded-xl hover:bg-cyan-600 transition shadow-lg shadow-cyan-500/20">
+            <button class="mt-8 bg-white text-slate-900 px-8 py-4 font-bold uppercase rounded-xl hover:bg-slate-200 transition shadow-lg shadow-white/5">
               Register Now
             </button>
           </div>
         </div>
 
         <div class="lg:col-span-8 space-y-6">
-          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-cyan-500/50 transition duration-300">
-            <span class="text-cyan-400 font-mono text-xs font-bold px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20">09:00 - 12:00</span>
+          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition duration-300">
+            <span class="text-sky-400 font-mono text-xs font-bold px-3 py-1 bg-sky-400/10 rounded-full border border-sky-400/20">09:00 - 12:00</span>
             <h3 class="text-2xl font-bold mt-4 text-white">Go Concurrency Patterns</h3>
             <p class="text-slate-400 mt-2">Master channels, goroutines, and advanced synchronization primitives for high-performance apps.</p>
           </div>
 
-          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-cyan-500/50 transition duration-300">
-            <span class="text-cyan-400 font-mono text-xs font-bold px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20">13:00 - 16:00</span>
+          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition duration-300">
+            <span class="text-sky-400 font-mono text-xs font-bold px-3 py-1 bg-sky-400/10 rounded-full border border-sky-400/20">13:00 - 16:00</span>
             <h3 class="text-2xl font-bold mt-4 text-white">Cloud-Native Microservices</h3>
             <p class="text-slate-400 mt-2">Build scalable, secure microservices using Go with industry-standard patterns and Kubernetes integration.</p>
           </div>
 
-          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-cyan-500/50 transition duration-300">
-            <span class="text-cyan-400 font-mono text-xs font-bold px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20">16:00 - 18:00</span>
+          <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition duration-300">
+            <span class="text-sky-400 font-mono text-xs font-bold px-3 py-1 bg-sky-400/10 rounded-full border border-sky-400/20">16:00 - 18:00</span>
             <h3 class="text-2xl font-bold mt-4 text-white">Testing & Debugging</h3>
             <p class="text-slate-400 mt-2">Best practices for writing maintainable test suites and troubleshooting production-grade Go services.</p>
           </div>
@@ -170,7 +171,7 @@
             <p class="mt-6 text-lg text-slate-400 leading-relaxed">
               Our lineup includes leading experts, researchers, and open-source contributors from across the global Go community.
             </p>
-            <a href="#" class="mt-8 inline-block bg-slate-800 text-white border border-slate-700 px-8 py-4 font-bold uppercase rounded-xl hover:bg-slate-700 hover:border-cyan-500/50 transition">
+            <a href="#" class="mt-8 inline-block bg-slate-800 text-white border border-slate-700 px-8 py-4 font-bold uppercase rounded-xl hover:bg-slate-700 hover:border-slate-600 transition">
               See all speakers
             </a>
           </div>
@@ -178,29 +179,28 @@
 
         <div class="lg:col-span-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Speaker Cards -->
-            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-cyan-500/50 transition duration-300">
+            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-slate-700 transition duration-300">
               <div class="aspect-square w-full overflow-hidden bg-slate-800 rounded-2xl mb-4">
                 <div class="w-full h-full bg-slate-700 group-hover:scale-105 transition-transform duration-300"></div>
               </div>
               <h3 class="font-bold text-lg text-white">Dr. Gopher</h3>
-              <p class="text-xs font-semibold text-cyan-400 mt-1">Keynote Speaker</p>
+              <p class="text-xs font-semibold text-sky-400 mt-1">Keynote Speaker</p>
             </div>
 
-            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-cyan-500/50 transition duration-300">
+            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-slate-700 transition duration-300">
               <div class="aspect-square w-full overflow-hidden bg-slate-800 rounded-2xl mb-4">
                 <div class="w-full h-full bg-slate-700 group-hover:scale-105 transition-transform duration-300"></div>
               </div>
               <h3 class="font-bold text-lg text-white">Sarah Jenkins</h3>
-              <p class="text-xs font-semibold text-cyan-400 mt-1">Lead Developer</p>
+              <p class="text-xs font-semibold text-sky-400 mt-1">Lead Developer</p>
             </div>
 
-            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-cyan-500/50 transition duration-300">
+            <div class="group p-4 bg-slate-900/60 border border-slate-800 rounded-3xl hover:border-slate-700 transition duration-300">
               <div class="aspect-square w-full overflow-hidden bg-slate-800 rounded-2xl mb-4">
                 <div class="w-full h-full bg-slate-700 group-hover:scale-105 transition-transform duration-300"></div>
               </div>
               <h3 class="font-bold text-lg text-white">Amit Verma</h3>
-              <p class="text-xs font-semibold text-cyan-400 mt-1">Cloud Architect</p>
+              <p class="text-xs font-semibold text-sky-400 mt-1">Cloud Architect</p>
             </div>
           </div>
         </div>
@@ -223,49 +223,45 @@
 
         <div class="lg:col-span-8">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- 2025 -->
-            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition">
+            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-slate-700 transition">
               <div class="flex-1 pr-4">
-                <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">2025</span>
+                <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">2025</span>
                 <h3 class="text-lg font-bold text-white mt-0.5">Jaipur</h3>
               </div>
               <div class="w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-slate-800">
-                <img src="https://placehold.co/200x200/1e293b/06b6d4?text=2025" alt="2025" class="w-full h-full object-cover">
+                <img src="https://placehold.co/200x200/1e293b/38bdf8?text=2025" alt="2025" class="w-full h-full object-cover">
               </div>
             </div>
 
-            <!-- 2024 -->
-            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition">
+            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-slate-700 transition">
               <div class="flex-1 pr-4">
-                <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">2024</span>
+                <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">2024</span>
                 <h3 class="text-lg font-bold text-white mt-0.5">Jaipur</h3>
-                <a href="https://www.youtube.com/watch?v=ZnrXDnhSmH0" target="_blank" class="text-xs text-slate-400 hover:text-cyan-400 underline mt-1 inline-block">Watch Archive</a>
+                <a href="https://www.youtube.com/watch?v=ZnrXDnhSmH0" target="_blank" class="text-xs text-slate-400 hover:text-sky-400 underline mt-1 inline-block">Watch Archive</a>
               </div>
               <div class="w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-slate-800">
-                <img src="https://placehold.co/200x200/1e293b/06b6d4?text=2024" alt="2024" class="w-full h-full object-cover">
+                <img src="https://placehold.co/200x200/1e293b/38bdf8?text=2024" alt="2024" class="w-full h-full object-cover">
               </div>
             </div>
 
-            <!-- 2023 -->
-            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition">
+            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-slate-700 transition">
               <div class="flex-1 pr-4">
-                <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">2023</span>
+                <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">2023</span>
                 <h3 class="text-lg font-bold text-white mt-0.5">Pune</h3>
-                <a href="https://gopherconindia.org/gci2023.pdf" target="_blank" class="text-xs text-slate-400 hover:text-cyan-400 underline mt-1 inline-block">Timeline PDF</a>
+                <a href="https://gopherconindia.org/gci2023.pdf" target="_blank" class="text-xs text-slate-400 hover:text-sky-400 underline mt-1 inline-block">Timeline PDF</a>
               </div>
               <div class="w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-slate-800">
-                <img src="https://placehold.co/200x200/1e293b/06b6d4?text=2023" alt="2023" class="w-full h-full object-cover">
+                <img src="https://placehold.co/200x200/1e293b/38bdf8?text=2023" alt="2023" class="w-full h-full object-cover">
               </div>
             </div>
 
-            <!-- 2022 -->
-            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition">
+            <div class="flex items-center p-4 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-slate-700 transition">
               <div class="flex-1 pr-4">
-                <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">2022</span>
+                <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">2022</span>
                 <h3 class="text-lg font-bold text-white mt-0.5">Pune</h3>
               </div>
               <div class="w-16 h-16 shrink-0 overflow-hidden rounded-xl bg-slate-800">
-                <img src="https://placehold.co/200x200/1e293b/06b6d4?text=2022" alt="2022" class="w-full h-full object-cover">
+                <img src="https://placehold.co/200x200/1e293b/38bdf8?text=2022" alt="2022" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -281,21 +277,21 @@
       <p class="text-slate-400 mb-12">Empowering the Go community in India.</p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Accenture</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">AWS</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Deloitte</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">EY</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Fivetran</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Glean</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Google</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Infosys</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-cyan-500/40 transition">Microsoft</div>
-        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-cyan-400 border-cyan-500/30">NPCI</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Accenture</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">AWS</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Deloitte</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">EY</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Fivetran</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Glean</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Google</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Infosys</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-slate-300 hover:border-slate-700 transition">Microsoft</div>
+        <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 font-bold text-sky-400 border-sky-400/30">NPCI</div>
       </div>
     </div>
   </section>
 
-  <!-- Event Highlights Image Ribbon -->
+  <!-- Highlights Image Ribbon -->
   <section class="py-16 bg-[#0b1120] overflow-hidden">
     <div class="max-w-7xl mx-auto px-8 mb-8">
       <h3 class="text-2xl font-bold text-white">Event Highlights</h3>

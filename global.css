@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
-/* Reset & Base Setup */
+/* Base Reset */
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: #0b1120;
@@ -12,7 +12,7 @@ body {
   display: none;
 }
 
-/* Mascot Positioning */
+/* Mascot Setup */
 .gopher-mascot {
   position: fixed;
   bottom: 0;
@@ -30,7 +30,7 @@ body {
   }
 }
 
-/* Infinite Background Marquee for Skyline */
+/* Skyline Marquee */
 @keyframes scrollSkyline {
   from { background-position: 0 0; }
   to { background-position: -2000px 0; }
@@ -44,7 +44,7 @@ body {
   animation: scrollSkyline 60s linear infinite;
 }
 
-/* Horizontal Auto-Scroll Marquee (Highlights) */
+/* Image Ribbon Marquee */
 @keyframes scrollX {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -59,7 +59,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Hero Circle Stack Animations */
+/* Monochromatic Hero Circle Stack */
 .circle-stack {
   position: relative;
   width: 800px;
@@ -77,28 +77,28 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.c5 { width: 800px; height: 800px; animation-delay: 0.1s; background-color: #002d40; z-index: 1; }
-.c4 { width: 680px; height: 680px; animation-delay: 0.2s; background-color: #005a73; z-index: 2; }
-.c3 { width: 560px; height: 560px; animation-delay: 0.3s; background-color: #007d9c; z-index: 3; }
-.c2 { width: 440px; height: 440px; animation-delay: 0.4s; background-color: #00add8; z-index: 4; }
-.c1 { width: 360px; height: 360px; animation-delay: 0.5s; background-color: #ffffff; z-index: 5; }
+.c5 { width: 800px; height: 800px; animation-delay: 0.1s; background-color: #020617; border: 1px solid #0f172a; z-index: 1; }
+.c4 { width: 680px; height: 680px; animation-delay: 0.2s; background-color: #0f172a; border: 1px solid #1e293b; z-index: 2; }
+.c3 { width: 560px; height: 560px; animation-delay: 0.3s; background-color: #1e293b; border: 1px solid #334155; z-index: 3; }
+.c2 { width: 440px; height: 440px; animation-delay: 0.4s; background-color: #334155; border: 1px solid #475569; z-index: 4; }
+.c1 { width: 360px; height: 360px; animation-delay: 0.5s; background-color: #ffffff; z-index: 5; box-shadow: 0 0 40px rgba(56, 189, 248, 0.15); }
 
 @keyframes slideInRight {
   from { transform: translateX(200px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Ribbon Scroll Animation */
+/* Banner Scroll */
 @keyframes ribbon-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
 .animate-ribbon-scroll {
-  animation: ribbon-scroll 20s linear infinite;
+  animation: ribbon-scroll 25s linear infinite;
 }
 
-/* Shiny Border Utility */
+/* Shiny Border Ring (Sky Blue & Indigo Glow) */
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -124,13 +124,13 @@ body {
   padding: 1.5px;
   background: conic-gradient(
     from var(--angle),
-    #06b6d4,
-    #1d4ed8,
-    #0f172a,
     #38bdf8,
-    #06b6d4
+    #818cf8,
+    #0f172a,
+    #1e293b,
+    #38bdf8
   );
-  animation: spin-gradient 5s linear infinite;
+  animation: spin-gradient 6s linear infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
