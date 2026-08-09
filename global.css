@@ -13,33 +13,31 @@
 
 
 /* Plug-and-Play Utility Class */
+/* Clean, bulletproof rotating border utility */
 .shiny-border {
   position: relative;
   isolation: isolate;
+  background-clip: padding-box;
 }
 
 .shiny-border::before {
   content: '';
   position: absolute;
-  inset: -2px; /* Border thickness */
+  inset: -2px; /* Border outline width */
   z-index: -1;
   border-radius: inherit;
   background: conic-gradient(
     from var(--angle),
-    #1e293b, /* Slate gray */
-    #0f172a, /* Deep blue-gray */
-    #1d4ed8, /* Vibrant dark blue */
     #94a3b8, /* Shiny gray highlight */
+    #1d4ed8, /* Vibrant dark blue */
+    #0f172a, /* Deep blue-gray */
     #1e3a8a, /* Deep navy blue */
-    #1e293b
+    #94a3b8
   );
   animation: spin-gradient 4s linear infinite;
+}
 
-  /* Cut out the middle so your button's cyan fill shows through */
-  padding: 2px;
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
+/* Optional: pause rotation on hover */
+.shiny-border:hover::before {
+  animation-play-state: paused;
 }
