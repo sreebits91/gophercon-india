@@ -11,26 +11,35 @@
   }
 }
 
-/* 2. Plug-and-Play Utility Class */
+
+/* Plug-and-Play Utility Class */
 .shiny-border {
   position: relative;
-  isolation: isolate; /* Keeps glow/background layered behind content */
+  isolation: isolate;
 }
 
 .shiny-border::before {
   content: '';
   position: absolute;
-  inset: -2px; /* Controls border thickness */
+  inset: -2px; /* Border thickness */
   z-index: -1;
-  border-radius: inherit; /* Copies parent shape automatically */
+  border-radius: inherit;
   background: conic-gradient(
     from var(--angle),
     #1e293b, /* Slate gray */
     #0f172a, /* Deep blue-gray */
-    #1d4ed8, /* Dark blue */
+    #1d4ed8, /* Vibrant dark blue */
     #94a3b8, /* Shiny gray highlight */
-    #1e3a8a, /* Navy blue */
+    #1e3a8a, /* Deep navy blue */
     #1e293b
   );
   animation: spin-gradient 4s linear infinite;
+
+  /* Cut out the middle so your button's cyan fill shows through */
+  padding: 2px;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
