@@ -1,0 +1,36 @@
+/* 1. Register the angle variable once */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-gradient {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* 2. Plug-and-Play Utility Class */
+.shiny-border {
+  position: relative;
+  isolation: isolate; /* Keeps glow/background layered behind content */
+}
+
+.shiny-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px; /* Controls border thickness */
+  z-index: -1;
+  border-radius: inherit; /* Copies parent shape automatically */
+  background: conic-gradient(
+    from var(--angle),
+    #1e293b, /* Slate gray */
+    #0f172a, /* Deep blue-gray */
+    #1d4ed8, /* Dark blue */
+    #94a3b8, /* Shiny gray highlight */
+    #1e3a8a, /* Navy blue */
+    #1e293b
+  );
+  animation: spin-gradient 4s linear infinite;
+}
