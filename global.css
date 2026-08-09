@@ -1,4 +1,104 @@
-/* 1. Register the angle variable once */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+/* Reset & Base Setup */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0b1120;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mascot Positioning */
+.gopher-mascot {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  width: 180px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .gopher-mascot {
+    width: 90px;
+    left: -10px;
+  }
+}
+
+/* Infinite Background Marquee for Skyline */
+@keyframes scrollSkyline {
+  from { background-position: 0 0; }
+  to { background-position: -2000px 0; }
+}
+
+.infinite-skyline {
+  background-image: url('hyderbad preview.png');
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  background-size: auto 100%;
+  animation: scrollSkyline 60s linear infinite;
+}
+
+/* Horizontal Auto-Scroll Marquee (Highlights) */
+@keyframes scrollX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scrollX 30s linear infinite;
+  will-change: transform;
+}
+
+.group:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Hero Circle Stack Animations */
+.circle-stack {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: slideInRight 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.c5 { width: 800px; height: 800px; animation-delay: 0.1s; background-color: #002d40; z-index: 1; }
+.c4 { width: 680px; height: 680px; animation-delay: 0.2s; background-color: #005a73; z-index: 2; }
+.c3 { width: 560px; height: 560px; animation-delay: 0.3s; background-color: #007d9c; z-index: 3; }
+.c2 { width: 440px; height: 440px; animation-delay: 0.4s; background-color: #00add8; z-index: 4; }
+.c1 { width: 360px; height: 360px; animation-delay: 0.5s; background-color: #ffffff; z-index: 5; }
+
+@keyframes slideInRight {
+  from { transform: translateX(200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Ribbon Scroll Animation */
+@keyframes ribbon-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-ribbon-scroll {
+  animation: ribbon-scroll 20s linear infinite;
+}
+
+/* Shiny Border Utility */
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -6,37 +106,31 @@
 }
 
 @keyframes spin-gradient {
-  to {
-    --angle: 360deg;
-  }
+  to { --angle: 360deg; }
 }
 
-
-/* Plug-and-Play Utility Class */
-/* Clean, bulletproof rotating border utility */
-/* Clean Plug-and-Play Shiny Border Ring */
 .shiny-border {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shiny-border::before {
   content: '';
   position: absolute;
-  inset: -2px; /* Controls border outline thickness */
+  inset: -1.5px;
   border-radius: inherit;
-  padding: 2px; /* Ring thickness */
+  padding: 1.5px;
   background: conic-gradient(
     from var(--angle),
-    #94a3b8, /* Shiny gray highlight */
-    #1e293b, /* Slate gray */
-    #1d4ed8, /* Vibrant dark blue */
-    #0f172a, /* Deep blue-gray */
-    #1e3a8a, /* Navy blue */
-    #94a3b8
+    #06b6d4,
+    #1d4ed8,
+    #0f172a,
+    #38bdf8,
+    #06b6d4
   );
-  animation: spin-gradient 4s linear infinite;
-  
-  /* Mask out the interior completely so cyan shows through */
+  animation: spin-gradient 5s linear infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
